@@ -5,13 +5,13 @@ using UnityEngine;
 public class KnightFight : MonoBehaviour
 {
 
-    public GameObject WindPush;
+    //public GameObject WindPush;
     public GameObject FireBoll;
     public GameObject BlastAnim;
     public GameObject SwordAttack;
 
     public Transform firePoint;
-    public Transform PushPoint;
+    //public Transform PushPoint;
     public Transform SwordPoint;
     private KnightMoement knightMoement;
 
@@ -35,7 +35,7 @@ public class KnightFight : MonoBehaviour
         //bool facingRight = knightMoement.facingRight;
 
         //attaking
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             // SwordAttack.SetActive(true);
             GameObject sword = Instantiate(SwordAttack, SwordPoint.position, Quaternion.identity);
@@ -54,47 +54,49 @@ public class KnightFight : MonoBehaviour
         }
 
         //blocking
-        if (Input.GetKey(KeyCode.Mouse1))
-        {
-            animator.SetBool("isBlocking", true);
+        //if (Input.GetKey(KeyCode.Mouse1))
+        //{
+        //    animator.SetBool("isBlocking", true);
 
-        }
-        else
-        {
-            animator.SetBool("isBlocking", false);
-        }
+        //}
+        //else
+        //{
+        //    animator.SetBool("isBlocking", false);
+        //}
 
         //casting(Pushing)
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            animator.SetBool("isCasting", true);
-            GameObject Push = Instantiate(WindPush, PushPoint.transform.position, Quaternion.identity);
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    animator.SetBool("isCasting", true);
+        //    GameObject Push = Instantiate(WindPush, PushPoint.transform.position, Quaternion.identity);
 
-            Destroy(Push, 5f);
-        }
-        else
-        {
-            animator.SetBool("isCasting", false);
-        }
+        //    Destroy(Push, 5f);
+        //}
+        //else
+        //{
+        //    animator.SetBool("isCasting", false);
+        //}
 
         //Dashing(skidding)
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            animator.SetBool("Dash", true);
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    animator.SetBool("crouch", true);
 
-        }
-        else
-        {
-            animator.SetBool("Dash", false);
-        }
+        //}
+        //else
+        //{
+        //    animator.SetBool("crouch", false);
+        //}
 
         //Striking
         if (Input.GetKeyDown(KeyCode.E))
         {
-            animator.SetBool("isStriking", true);
-            GameObject Fire = Instantiate(FireBoll, firePoint.transform.position, Quaternion.identity);
+            //animator.SetBool("isStriking", true);
+            //GameObject Fire = Instantiate(FireBoll, firePoint.transform.position, Quaternion.identity);
 
-            Destroy(Fire, 5f);
+            //Destroy(Fire, 5f);
+
+             StartCoroutine( "PlayerStrike");
 
 
         }
@@ -103,6 +105,19 @@ public class KnightFight : MonoBehaviour
             animator.SetBool("isStriking", false);
         }
 
+
+
+
+    }
+    IEnumerator PlayerStrike()
+    {
+        animator.SetBool("isStriking", true);
+        
+        yield return new WaitForSeconds(0.5f);
+
+        GameObject Fire = Instantiate(FireBoll, firePoint.transform.position, Quaternion.identity);
+
+        Destroy(Fire, 5f);
 
 
 

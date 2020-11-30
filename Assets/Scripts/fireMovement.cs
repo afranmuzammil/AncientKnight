@@ -18,12 +18,12 @@ public class fireMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (KnightMoement.facingRight == true)
+        if (CharcterController.m_FacingRight == true)
         {
             transform.Translate(-Vector2.left * fireSpeed * Time.fixedDeltaTime);
             Destroy(blastanimation, 0.5f);
         }
-        else if (KnightMoement.facingRight == false)
+        else if (CharcterController.m_FacingRight == false)
         {
             thescale = transform.localScale;
 

@@ -14,7 +14,7 @@ public class KnightHealth : MonoBehaviour
     {
         if (Health <= 0)
         {
-            animator.SetTrigger("Death");
+           // animator.SetTrigger("Death");
             DestroyGameObject();
 
         }
@@ -32,7 +32,7 @@ public class KnightHealth : MonoBehaviour
 
                 //  Debug.Log("collition with the player");
                 // m_animator.SetBool("Hurt", true);
-                animator.SetTrigger("Hurt");
+                animator.SetTrigger("hurt");
             }
 
         }
@@ -44,7 +44,7 @@ public class KnightHealth : MonoBehaviour
 
                 //  Debug.Log("collition with the player");
                 // m_animator.SetBool("Hurt", true);
-                animator.SetTrigger("Hurt");
+                animator.SetTrigger("hurt");
             }
         }
 
