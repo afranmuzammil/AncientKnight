@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class KnightFight : MonoBehaviour
 {
@@ -34,35 +35,30 @@ public class KnightFight : MonoBehaviour
     {
         //bool facingRight = knightMoement.facingRight;
 
-        //attaking
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            // SwordAttack.SetActive(true);
-            GameObject sword = Instantiate(SwordAttack, SwordPoint.position, Quaternion.identity);
-            animator.SetBool("isAttacking", true);
-            Destroy(sword, 0.1f);
-
-        }
-        else if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            // SwordAttack.SetActive(false);
-        }
-        else
-        {
-            animator.SetBool("isAttacking", false);
-            // SwordAttack.SetActive(false);
-        }
-
-        //blocking
-        //if (Input.GetKey(KeyCode.Mouse1))
+       // attaking
+        //if (Input.GetKey(KeyCode.Mouse0))
         //{
-        //    animator.SetBool("isBlocking", true);
+        //    // SwordAttack.SetActive(true);
+        //    GameObject sword = Instantiate(SwordAttack, SwordPoint.position, Quaternion.identity);
+        //    //  animator.SetBool("isAttacking", true);
+        //    animator.SetTrigger("isAttacking1");
+        //    Destroy(sword, 0.1f);
 
+        //}
+        //else if (Input.GetKeyUp(KeyCode.Mouse0))
+        //{
+        //    // SwordAttack.SetActive(false);
         //}
         //else
         //{
-        //    animator.SetBool("isBlocking", false);
+        //    animator.SetBool("isAttacking", false);
+        //    // SwordAttack.SetActive(false);
         //}
+
+
+
+
+
 
         //casting(Pushing)
         //if (Input.GetKeyDown(KeyCode.Q))
@@ -89,31 +85,47 @@ public class KnightFight : MonoBehaviour
         //}
 
         //Striking
-        if (Input.GetKeyDown(KeyCode.E))
+        if (CrossPlatformInputManager.GetButtonDown("Strike"))
         {
-            //animator.SetBool("isStriking", true);
+            //animator.SetTrigger("isStriking1");
             //GameObject Fire = Instantiate(FireBoll, firePoint.transform.position, Quaternion.identity);
 
             //Destroy(Fire, 5f);
 
-             StartCoroutine( "PlayerStrike");
-
-
+           StartCoroutine( "PlayerStrike");
         }
         else
         {
-            animator.SetBool("isStriking", false);
+           // animator.SetBool("isStriking", false);
         }
 
 
 
 
     }
+    //mobile attack
+
+    public void Attack()
+    {
+        // SwordAttack.SetActive(true);
+        GameObject sword = Instantiate(SwordAttack, SwordPoint.position, Quaternion.identity);
+        //  animator.SetBool("isAttacking", true);
+        animator.SetTrigger("isAttacking1");
+        Destroy(sword, 0.1f);
+
+    }
+
+    //public void Strike()
+    //{
+    //    StartCoroutine("PlayerStrike");
+    //}
+
     IEnumerator PlayerStrike()
     {
-        animator.SetBool("isStriking", true);
+       // animator.SetBool("isStriking", true); 
+        animator.SetTrigger("isStriking1");
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
 
         GameObject Fire = Instantiate(FireBoll, firePoint.transform.position, Quaternion.identity);
 

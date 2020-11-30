@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ede70f094063a4eb6e60ea6c09aa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSpeed: 2
+  fireSpeed: 5
   m_object: {fileID: 7930326506721659094}
   blastAnim: {fileID: 7307926023594098025, guid: 5399635594c44454ba2b73fb79d0c383,
     type: 3}
