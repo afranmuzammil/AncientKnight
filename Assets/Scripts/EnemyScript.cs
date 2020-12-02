@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Pathfinding;
 
 public class EnemyScript : MonoBehaviour
 {
 
-    [SerializeField] float m_speed = 1.0f;
-    [SerializeField] float m_jumpForce = 7.5f;
 
     public float lookRadius = 4f;
     public float EnemyHealth = 10f;
@@ -13,49 +12,46 @@ public class EnemyScript : MonoBehaviour
     public Transform myTansfrom;
     public Transform E_SowrdPoint;
     public GameObject EnemySowrd;
-    private Animator m_animator;
-    private Rigidbody2D m_body2d;
-    private Sensor_Bandit m_groundSensor;
-    private bool m_grounded = false;
-    //private bool m_combatIdle = false;
-    //private bool m_isDead = false;
-    private bool TargetInRange = false;
-    public KnightMoement knightMoement;
+    public EnemyAI enemyAI;
+    public float AttackRange = 2f;
+  //  public Animator m_animator;
+   
+    public static bool TargetInRange = false;
+    public static bool InattackRange = false;
+    public static bool HealthIsNull = false;
+    public static bool gotHurt = false;
+
+   
+
 
     // Use this for initialization
     void Start()
     {
-        m_animator = GetComponent<Animator>();
-        m_body2d = GetComponent<Rigidbody2D>();
-        m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
-        knightMoement.GetComponent<KnightFight>();
+       // m_animator = GetComponent<Animator>();
+      
+       // aIPath.GetComponent<AIPath>();
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Check if character just landed on the ground
-        if (!m_grounded && m_groundSensor.State())
-        {
-            m_grounded = true;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
+        ////Check if character just landed on the ground
+        //if (!m_grounded && m_groundSensor.State())
+        //{
+        //    m_grounded = true;
+        //    m_animator.SetBool("Grounded", m_grounded);
+        //}
 
-        //Check if character just started falling
-        if (m_grounded && !m_groundSensor.State())
-        {
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
+        ////Check if character just started falling
+        //if (m_grounded && !m_groundSensor.State())
+        //{
+        //    m_grounded = false;
+        //    m_animator.SetBool("Grounded", m_grounded);
+        //}
 
-        // // -- Handle input and movement --
-        // float inputX = Input.GetAxis("Horizontal");
-
-        // // Swap direction of sprite depending on walk direction
-        // if (inputX > 0)
-        //     transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-        // else if (inputX < 0)
-        //     transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+       
 
         // Move
         float distance = Vector2.Distance(target.position, transform.position);
@@ -63,106 +59,75 @@ public class EnemyScript : MonoBehaviour
         if (distance <= lookRadius)
         {
             TargetInRange = true;
-            //transform.LookAt(target);
-            //m_body2d.transform.Translate(Vector2.left * m_speed * Time.fixedDeltaTime, myTansfrom);
-
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, transform.position.y, -5), m_speed * Time.deltaTime);
-
-            //m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
+            //  Debug.Log("in radius");
+           GetComponent<EnemyAI>().enabled = true;
+          
         }
         else
         {
             TargetInRange = false;
+           
+            GetComponent<EnemyAI>().enabled = false;
         }
-        //Set AirSpeed in animator
-        m_animator.SetFloat("AirSpeed", m_body2d.velocity.y);
+        
 
         // -- Handle Animations --
         //Death
         if (EnemyHealth <= 0)
         {
-
-            m_animator.SetTrigger("Death");
+            HealthIsNull = true;
+         
             DestroyGameObject();
-            // else
-            //m_animator.SetTrigger("Recover");
-
-            //m_isDead = !m_isDead;
-        }
-
-        //Hurt
-        // else if (Input.GetKeyDown("q"))
-        //     m_animator.SetTrigger("Hurt");
-
-        //Attack
-
-
-        //Change between idle and combat idle
-        // else if (Input.GetKeyDown("f"))
-        //     m_combatIdle = !m_combatIdle;
-
-        //Jump
-        if (TargetInRange && knightMoement.jumped)
-        {
-            Debug.Log("jumping");
-            m_animator.SetBool("jump1", true);
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
-            m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
-            m_groundSensor.Disable(0.2f);
+           
         }
         else
         {
-            m_animator.SetBool("jump1", false);
+            HealthIsNull = false;
         }
 
-        if (TargetInRange)
+
+
+        if (distance<=AttackRange)
         {
-            m_animator.SetBool("Attack1", true);
+            InattackRange = true;
+          
             GameObject E_sword = Instantiate(EnemySowrd, E_SowrdPoint.position, Quaternion.identity);
             Destroy(E_sword, 0.1f);
+            //return;
         }
         else
         {
-            m_animator.SetBool("Attack1", false);
+            InattackRange = false;
+           
         }
 
-        //Run
-        // else if (Mathf.Abs(inputX) > Mathf.Epsilon)
-        //     m_animator.SetInteger("AnimState", 2);
 
-        // //Combat Idle
-        // else if (m_combatIdle)
-        //     m_animator.SetInteger("AnimState", 1);
-
-        // //Idle
-        // else
-        //     m_animator.SetInteger("AnimState", 0);
     }
 
 
     private void OnCollisionEnter2D(Collision2D col)
     {
 
-        //Debug.Log("collition");
+        Debug.Log("collition");
         if (col.gameObject.tag == "sword")
         {
             --EnemyHealth;
-            //  Debug.Log("collition with the player");
-            // m_animator.SetBool("Hurt", true);
-            m_animator.SetTrigger("Hurt1");
+            gotHurt = true;
+            // Debug.Log("collition with the player");
+            
         }
         else if (col.gameObject.tag == "fireBall")
         {
             EnemyHealth -= 2;
-            // Debug.Log("collition with the fireBall");
-            m_animator.SetTrigger("Hurt1");
-            //m_animator.SetTrigger("Recover");
+            gotHurt = true;
+            Debug.Log("collition with the fireBall");
+            
 
         }
         else
         {
-            // m_animator.SetBool("Hurt1", false);
+            gotHurt = false;
+           
         }
     }
 
