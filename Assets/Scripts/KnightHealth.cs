@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KnightHealth : MonoBehaviour
 {
-    public  static int Health = 100;
+    public static int Health = 100;
     //public GameObject Shield;
     public Animator animator;
     public GameObject LostLevel;
@@ -24,8 +24,10 @@ public class KnightHealth : MonoBehaviour
         {
             LostLevel.SetActive(true);
             Time.timeScale = 0f;
+            Health = 100;
            //animator.SetTrigger("Death");
-            DestroyGameObject();
+            //DestroyGameObject();
+            return;
 
         }
 

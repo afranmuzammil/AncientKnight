@@ -1317,10 +1317,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1195337712036826127, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1550027474067899794, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550027474067899794, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2164034267360384703, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
@@ -1371,11 +1381,6 @@ PrefabInstance:
     - target: {fileID: 3368022991755838565, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3622560700905644101, guid: c684339074c8a1a409ef688c535a52b1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3622560700905644101, guid: c684339074c8a1a409ef688c535a52b1,
@@ -1571,6 +1576,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4844214585569319029, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelLostRestart
+      objectReference: {fileID: 0}
     - target: {fileID: 5256308674527583544, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
       propertyPath: m_Name
@@ -1665,6 +1675,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967145268980409186, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: NextLevelNumer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5969826791879349628, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}

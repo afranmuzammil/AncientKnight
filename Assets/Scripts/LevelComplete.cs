@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class LevelComplete : MonoBehaviour
 {
     public int ScenceNumber;
+    public int NextLevelNumer;
     public GameObject OpsMenu;
     public GameObject LevelOver;
+    
     public void NextLevel()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(NextLevelNumer);
     }
 
     //public void OnPressPlay()
@@ -20,6 +22,14 @@ public class LevelComplete : MonoBehaviour
     //}
     public void OnPressRestart()
     {
+        SceneManager.LoadScene(ScenceNumber);
+        Time.timeScale = 1f;
+       // KnightHealth.Health = 100;
+        LevelOver.SetActive(false);
+    }
+    public void LevelLostRestart()
+    {
+       
         SceneManager.LoadScene(ScenceNumber);
         Time.timeScale = 1f;
         LevelOver.SetActive(false);

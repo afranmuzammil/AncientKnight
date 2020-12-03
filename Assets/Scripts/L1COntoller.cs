@@ -21,7 +21,7 @@ public class L1COntoller : MonoBehaviour
     void Update()
     {
         CoinText.text = Coins.ToString("");
-        Debug.Log(Coins);
+        //Debug.Log(Coins);
     }
 
     public void OnPressPause()
@@ -38,6 +38,7 @@ public class L1COntoller : MonoBehaviour
 
     public void OnPressRestart()
     {
+
         SceneManager.LoadScene(ScenceNumber);
         OnPressPlay();
     }
