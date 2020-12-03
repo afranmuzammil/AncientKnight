@@ -7,15 +7,16 @@ public class EnemyScript : MonoBehaviour
 
 
     public float lookRadius = 4f;
-    public float EnemyHealth = 10f;
+    public int EnemyHealth = 10;
     public Transform target;
     public Transform myTansfrom;
     public Transform E_SowrdPoint;
     public GameObject EnemySowrd;
     public EnemyAI enemyAI;
     public float AttackRange = 2f;
-  //  public Animator m_animator;
-   
+    public EHealthBar EhealthBar;
+    //  public Animator m_animator;
+
     public static bool TargetInRange = false;
     public static bool InattackRange = false;
     public static bool HealthIsNull = false;
@@ -27,11 +28,12 @@ public class EnemyScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-       // m_animator = GetComponent<Animator>();
-      
-       // aIPath.GetComponent<AIPath>();
-        
-        
+        EhealthBar.SetMaxHealth(EnemyHealth);
+        // m_animator = GetComponent<Animator>();
+
+        // aIPath.GetComponent<AIPath>();
+
+
     }
 
     // Update is called once per frame
@@ -51,7 +53,7 @@ public class EnemyScript : MonoBehaviour
         //    m_animator.SetBool("Grounded", m_grounded);
         //}
 
-       
+        EhealthBar.SetHealth(EnemyHealth);
 
         // Move
         float distance = Vector2.Distance(target.position, transform.position);

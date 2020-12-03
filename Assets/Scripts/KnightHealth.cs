@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class KnightHealth : MonoBehaviour
 {
-    public float Health = 100f;
+    public  static int Health = 100;
     //public GameObject Shield;
     public Animator animator;
 
+    public HealthBarScript HealthBar;
 
+    private void Start()
+    {
+        HealthBar.SetMaxHealth(Health);
+    }
 
     private void Update()
     {
+      //  Debug.Log(Health);
+        HealthBar.SetHealth(Health);
         if (Health <= 0)
         {
            // animator.SetTrigger("Death");
