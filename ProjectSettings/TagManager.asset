@@ -10,6 +10,10 @@ TagManager:
   - E_sword
   - Enemy1
   - fireBall
+  - E2_sword
+  - Live
+  - Opsticle
+  - gameOver
   layers:
   - Default
   - TransparentFX

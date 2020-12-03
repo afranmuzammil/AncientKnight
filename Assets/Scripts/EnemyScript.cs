@@ -110,7 +110,7 @@ public class EnemyScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
 
-        Debug.Log("collition");
+        //Debug.Log("collition");
         if (col.gameObject.tag == "sword")
         {
             --EnemyHealth;
@@ -131,6 +131,7 @@ public class EnemyScript : MonoBehaviour
             gotHurt = false;
            
         }
+
     }
 
     void DestroyGameObject()

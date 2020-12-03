@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class L1COntoller : MonoBehaviour
 {
     public GameObject PauseMenu; 
     public GameObject OpsMenu;
+    public GameObject LevelLost;
     public int ScenceNumber;
+    public static float Coins = 0;
+    public Text CoinText;
     // Update is called once per frame
-    void Update()
+
+
+    private void Start()
     {
         
+    }
+    void Update()
+    {
+        CoinText.text = Coins.ToString("");
+        Debug.Log(Coins);
     }
 
     public void OnPressPause()
@@ -44,6 +55,12 @@ public class L1COntoller : MonoBehaviour
     {
         OpsMenu.SetActive(false);
         PauseMenu.SetActive(true);
+    }
+
+    public void OnClickBackLL()
+    {
+        OpsMenu.SetActive(false);
+        LevelLost.SetActive(true);
     }
 
 

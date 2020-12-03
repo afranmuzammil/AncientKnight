@@ -7,6 +7,7 @@ public class KnightHealth : MonoBehaviour
     public  static int Health = 100;
     //public GameObject Shield;
     public Animator animator;
+    public GameObject LostLevel;
 
     public HealthBarScript HealthBar;
 
@@ -21,7 +22,9 @@ public class KnightHealth : MonoBehaviour
         HealthBar.SetHealth(Health);
         if (Health <= 0)
         {
-           // animator.SetTrigger("Death");
+            LostLevel.SetActive(true);
+            Time.timeScale = 0f;
+           //animator.SetTrigger("Death");
             DestroyGameObject();
 
         }
@@ -34,25 +37,33 @@ public class KnightHealth : MonoBehaviour
         if (col.gameObject.tag == "E_sword")
         {
             --Health;
-            if (Health >= 0)
-            {
+            animator.SetTrigger("hurt");
+            //if (Health >= 0)
+            //{
 
-                //  Debug.Log("collition with the player");
-                // m_animator.SetBool("Hurt", true);
-                animator.SetTrigger("hurt");
-            }
+            //    //  Debug.Log("collition with the player");
+            //    // m_animator.SetBool("Hurt", true);
+            //    animator.SetTrigger("hurt");
+            //}
 
         }
         else if (col.gameObject.tag == "E2_sword")
         {
             Health -= 2;
-            if (Health >= 0)
-            {
+            animator.SetTrigger("hurt");
+            //if (Health >= 0)
+            //{
 
-                //  Debug.Log("collition with the player");
-                // m_animator.SetBool("Hurt", true);
-                animator.SetTrigger("hurt");
-            }
+            //    //  Debug.Log("collition with the player");
+            //    // m_animator.SetBool("Hurt", true);
+            //    animator.SetTrigger("hurt");
+            //}
+        }
+        else if (col.gameObject.tag == "Opsticle")
+        {
+            Health -= 10;
+            animator.SetTrigger("hurt");
+         
         }
 
 

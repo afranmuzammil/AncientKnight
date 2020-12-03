@@ -12,6 +12,7 @@ public class playerMove : MonoBehaviour
     public bool jump = false;
     public Animator animator;
     public bool crouch = false;
+    public GameObject NextLevel;
 
     // Update is called once per frame
     void Update()
@@ -76,5 +77,14 @@ public class playerMove : MonoBehaviour
         Debug.Log("pressed");
         moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
         Debug.Log(moveHorizontal);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "gameOver")
+        {
+            NextLevel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
