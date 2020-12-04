@@ -15,6 +15,7 @@ public class EnemyScript : MonoBehaviour
     public EnemyAI enemyAI;
     public float AttackRange = 2f;
     public EHealthBar EhealthBar;
+    public ScoreLogic scoreLogic;
     //  public Animator m_animator;
 
     public static bool TargetInRange = false;
@@ -78,8 +79,9 @@ public class EnemyScript : MonoBehaviour
         if (EnemyHealth <= 0)
         {
             HealthIsNull = true;
-         
+            scoreLogic.KilledEnemy();
             DestroyGameObject();
+            return;
            
         }
         else

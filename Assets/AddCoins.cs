@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AddCoins : MonoBehaviour
 {
+
+    public ScoreLogic scoreLogic;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "player")
@@ -11,6 +14,7 @@ public class AddCoins : MonoBehaviour
             // Debug.Log("collition");
 
             Destroy(gameObject);
+            scoreLogic.CoinTaken(); 
             L1COntoller.Coins = +1;
             return;
         }

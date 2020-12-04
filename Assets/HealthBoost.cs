@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class HealthBoost : MonoBehaviour
 {
+    public ScoreLogic scoreLogic;
+
+    private void Start()
+    {
+       // scoreLogic.GetComponent<ScoreLogic>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "player")
@@ -12,6 +19,7 @@ public class HealthBoost : MonoBehaviour
            
             Destroy(gameObject);
             KnightHealth.Health += 20;
+            scoreLogic.HealthTaken();
             return;
         }
     }

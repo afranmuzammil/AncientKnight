@@ -223,7 +223,8 @@ MonoBehaviour:
     type: 3}
   enemyAI: {fileID: 8842835025316827142}
   AttackRange: 2
-  EhealthBar: {fileID: 0}
+  EhealthBar: {fileID: 8842835026178869746}
+  scoreLogic: {fileID: 0}
 --- !u!1 &8842835025327706457
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,19 +373,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8842835026079378691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8844292761195016891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ddbc54b55788c48aec3007a79eb21c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_animator: {fileID: 8929532416528293475}
 --- !u!1 &8842835026178869744
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +575,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8842835026079378691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844292761195016891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ddbc54b55788c48aec3007a79eb21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 8929532416528293475}
 --- !u!1001 &8842835025761990943
 PrefabInstance:
   m_ObjectHideFlags: 0
