@@ -890,10 +890,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 0
   coins: 0
-  CoinsGiven: 0
-  HealthBoostGiven: 0
-  NumEnemyGiven: 0
-  minCoinsToCollect: 0
+  CoinsGiven: 1
+  HealthBoostGiven: 2
+  NumEnemyGiven: 3
+  minCoinsToCollect: 1
   finalScore: 0
   ScoreText: {fileID: 2698914648060049851}
   exitlayer: {fileID: 0}
@@ -2722,22 +2722,22 @@ PrefabInstance:
     - target: {fileID: 7497281837374788061, guid: f8999fca87b62a644ac4334a06dd3f07,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.6080178
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7497281837374788061, guid: f8999fca87b62a644ac4334a06dd3f07,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.9528302
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7497281837374788061, guid: f8999fca87b62a644ac4334a06dd3f07,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.29214135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7497281837374788061, guid: f8999fca87b62a644ac4334a06dd3f07,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.18431373
+      value: 0.54509807
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8999fca87b62a644ac4334a06dd3f07, type: 3}

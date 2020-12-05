@@ -48,7 +48,7 @@ public class DailogBox : MonoBehaviour
         StartCoroutine("fadeIn");
         yield return new WaitForSeconds(3f);
         StopCoroutine("fadeIn");
-        Debug.Log("fading out");
+        //Debug.Log("fading out");
         StartCoroutine("fadeOut");
 
     }
