@@ -124,6 +124,7 @@ public class EnemyScript : MonoBehaviour
         {
             EnemyHealth -= 2;
             gotHurt = true;
+            //SoundManagerScript.PlaySound("BlastSound");
             Debug.Log("collition with the fireBall");
             
 

@@ -83,6 +83,7 @@ public class playerMove : MonoBehaviour
     {
         if (col.gameObject.tag == "gameOver")
         {
+            SoundManagerScript.PlaySound("stinger_win");
             NextLevel.SetActive(true);
             Time.timeScale = 0f;
         }

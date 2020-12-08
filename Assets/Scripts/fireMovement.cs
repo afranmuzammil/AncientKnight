@@ -42,7 +42,7 @@ public class fireMovement : MonoBehaviour
 
 
         blastanimation = Instantiate(blastAnim, m_object.transform.position, Quaternion.identity);
-
+        SoundManagerScript.PlaySound("BlastSound");
         Destroy(m_object, 0.1f);
         Destroy(blastanimation, 0.2f);
     }

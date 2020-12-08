@@ -6,6 +6,7 @@ public class Exitlayer : MonoBehaviour
 {
     public DailogBox dailogBox;
     public GameObject TextBox;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class Exitlayer : MonoBehaviour
     {
         if(col.gameObject.tag == "player")
         {
+            TextBox.SetActive(true);
             dailogBox.NoCoins();
         }
         return;

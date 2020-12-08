@@ -12,11 +12,11 @@ public class AddCoins : MonoBehaviour
         if (other.gameObject.tag == "player")
         {
             // Debug.Log("collition");
-
+            SoundManagerScript.PlaySound("Coins");
             Destroy(gameObject);
             scoreLogic.CoinTaken(); 
-            L1COntoller.Coins = +1;
-            return;
+            L1COntoller.Coins += 1;
+            //return;
         }
     }
 }

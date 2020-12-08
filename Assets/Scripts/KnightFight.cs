@@ -111,6 +111,7 @@ public class KnightFight : MonoBehaviour
         GameObject sword = Instantiate(SwordAttack, SwordPoint.position, Quaternion.identity);
         //  animator.SetBool("isAttacking", true);
         animator.SetTrigger("isAttacking1");
+        SoundManagerScript.PlaySound("playerAttackSound");
         Destroy(sword, 0.1f);
 
     }
@@ -124,7 +125,7 @@ public class KnightFight : MonoBehaviour
     {
        // animator.SetBool("isStriking", true); 
         animator.SetTrigger("isStriking1");
-        
+        SoundManagerScript.PlaySound("Shoot");
         yield return new WaitForSeconds(0.8f);
 
         GameObject Fire = Instantiate(FireBoll, firePoint.transform.position, Quaternion.identity);

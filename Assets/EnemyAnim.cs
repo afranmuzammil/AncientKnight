@@ -23,6 +23,7 @@ public class EnemyAnim : MonoBehaviour
         if (EnemyScript.InattackRange)
         {
             m_animator.SetBool("Attack1", true);
+            SoundManagerScript.PlaySound("EnamyAtack");
         }
         else if (!EnemyScript.InattackRange)
         {
@@ -33,6 +34,7 @@ public class EnemyAnim : MonoBehaviour
         if (EnemyScript.HealthIsNull)
         {
             m_animator.SetTrigger("Death");
+            SoundManagerScript.PlaySound("PlayerDead");
         }
         //else if (!EnemyScript.HealthIsNull)
         //{

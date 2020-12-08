@@ -25,7 +25,8 @@ public class KnightHealth : MonoBehaviour
             LostLevel.SetActive(true);
             Time.timeScale = 0f;
             Health = 100;
-           //animator.SetTrigger("Death");
+            SoundManagerScript.PlaySound("stinger_lose");
+            //animator.SetTrigger("Death");
             //DestroyGameObject();
             return;
 
@@ -40,6 +41,7 @@ public class KnightHealth : MonoBehaviour
         {
             --Health;
             animator.SetTrigger("hurt");
+            SoundManagerScript.PlaySound("PlayerHit");
             //if (Health >= 0)
             //{
 
@@ -53,6 +55,7 @@ public class KnightHealth : MonoBehaviour
         {
             Health -= 2;
             animator.SetTrigger("hurt");
+            SoundManagerScript.PlaySound("PlayerHit");
             //if (Health >= 0)
             //{
 
@@ -65,7 +68,8 @@ public class KnightHealth : MonoBehaviour
         {
             Health -= 10;
             animator.SetTrigger("hurt");
-         
+            SoundManagerScript.PlaySound("PlayerHit");
+
         }
 
 

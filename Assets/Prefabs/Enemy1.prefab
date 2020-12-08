@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b854cea0a76ce44b5d20963630b9f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 5
+  lookRadius: 4
   EnemyHealth: 10
   target: {fileID: 0}
   myTansfrom: {fileID: 7892756449419564074}
@@ -397,6 +397,7 @@ MonoBehaviour:
   enemyAI: {fileID: 7892756449419564079}
   AttackRange: 1.5
   EhealthBar: {fileID: 7892756450184456877}
+  scoreLogic: {fileID: 0}
 --- !u!1 &7892756449677865639
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +596,7 @@ MonoBehaviour:
   enemyAI: {fileID: 0}
   AttackRange: 2
   EhealthBar: {fileID: 0}
+  scoreLogic: {fileID: 0}
 --- !u!114 &7892756450007066469
 MonoBehaviour:
   m_ObjectHideFlags: 0
