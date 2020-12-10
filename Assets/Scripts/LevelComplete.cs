@@ -15,6 +15,7 @@ public class LevelComplete : MonoBehaviour
     {
         //SceneManager.LoadScene(NextLevelNumer);
         StartCoroutine(LoadNextLevel(NextLevelNumer));
+        Vibration.Vibrate(100);
     }
 
     //public void OnPressPlay()
@@ -25,6 +26,7 @@ public class LevelComplete : MonoBehaviour
     public void OnPressRestart()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         SceneManager.LoadScene(ScenceNumber);
         Time.timeScale = 1f;
        // KnightHealth.Health = 100;
@@ -34,6 +36,7 @@ public class LevelComplete : MonoBehaviour
     {
 
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         SceneManager.LoadScene(ScenceNumber);
         Time.timeScale = 1f;
         LevelOver.SetActive(false);
@@ -42,6 +45,7 @@ public class LevelComplete : MonoBehaviour
     public void OnPressOps()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         LevelOver.SetActive(false);
         OpsMenu.SetActive(true);
 
@@ -52,6 +56,7 @@ public class LevelComplete : MonoBehaviour
     public void Quit()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         Application.Quit();
     }
 

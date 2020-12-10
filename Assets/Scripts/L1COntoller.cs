@@ -27,6 +27,7 @@ public class L1COntoller : MonoBehaviour
     public void OnPressPause()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         PauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -34,6 +35,7 @@ public class L1COntoller : MonoBehaviour
     public void OnPressPlay()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -41,17 +43,20 @@ public class L1COntoller : MonoBehaviour
     public void OnPressRestart()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         SceneManager.LoadScene(ScenceNumber);
         OnPressPlay();
     }
     public void Quit()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         Application.Quit();
     }
     public void OnPressOps()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         PauseMenu.SetActive(false);
         OpsMenu.SetActive(true);
        
@@ -59,6 +64,7 @@ public class L1COntoller : MonoBehaviour
     public void OnClickBack()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         OpsMenu.SetActive(false);
         PauseMenu.SetActive(true);
     }
@@ -70,7 +76,10 @@ public class L1COntoller : MonoBehaviour
         LevelLost.SetActive(true);
     }
 
-
+    public void VibrateButton()
+    {
+        Vibration.Vibrate(50);
+    }
 
 
 }

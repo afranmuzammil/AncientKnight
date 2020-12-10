@@ -1084,6 +1084,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 59027314193083659, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 860851623}
+    - target: {fileID: 59027314193083659, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VibrateButton
+      objectReference: {fileID: 0}
     - target: {fileID: 82388299537192993, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1104,6 +1114,11 @@ PrefabInstance:
       propertyPath: CrosFadeAnim
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 99964499797194518, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: ScenceNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 747037863212731982, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
       propertyPath: m_Maskable
@@ -1113,6 +1128,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123839962580421329, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 860851623}
+    - target: {fileID: 1123839962580421329, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VibrateButton
       objectReference: {fileID: 0}
     - target: {fileID: 1195337710489822017, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
@@ -1164,7 +1189,7 @@ PrefabInstance:
     - target: {fileID: 1195337711999006532, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1195337712036826112, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
@@ -1181,10 +1206,35 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 1244453969891784359, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 860851623}
+    - target: {fileID: 1244453969891784359, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VibrateButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244453969891784359, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1563776368978077171, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
       propertyPath: axisValue
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817253569300200009, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 860851623}
+    - target: {fileID: 2817253569300200009, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VibrateButton
       objectReference: {fileID: 0}
     - target: {fileID: 3170360788206045241, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
@@ -1223,6 +1273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4035107328751406845, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035107328751406845, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 824192766}
@@ -1230,6 +1285,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035107328751406845, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035107328751406845, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035107328751406845, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 860851623}
+    - target: {fileID: 4035107328751406845, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: VibrateButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035107328751406845, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4160100150276522098, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
@@ -1492,10 +1572,15 @@ PrefabInstance:
       propertyPath: CrosFadeAnim
       value: 
       objectReference: {fileID: 263162466}
+    - target: {fileID: 5967145268980409186, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: ScenceNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6073222403807362060, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6073222403807362060, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
@@ -1522,6 +1607,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6073222403807362060, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: VibrateButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073222403807362060, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073222403807362060, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 860851623}
     - target: {fileID: 6814687950349332941, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}
       propertyPath: exitlayer
@@ -1556,6 +1656,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnClickBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6895214698519709524, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 860851623}
+    - target: {fileID: 6895214698519709524, guid: c684339074c8a1a409ef688c535a52b1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VibrateButton
       objectReference: {fileID: 0}
     - target: {fileID: 7045584090099098053, guid: c684339074c8a1a409ef688c535a52b1,
         type: 3}

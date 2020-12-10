@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KnightHealth : MonoBehaviour
 {
-    public static int Health = 100;
+    public static int Health = 1000;
     //public GameObject Shield;
     public Animator animator;
     public GameObject LostLevel;
@@ -66,7 +66,7 @@ public class KnightHealth : MonoBehaviour
         }
         else if (col.gameObject.tag == "Opsticle")
         {
-            Health -= 10;
+           Health -= 10;
             animator.SetTrigger("hurt");
             SoundManagerScript.PlaySound("PlayerHit");
 

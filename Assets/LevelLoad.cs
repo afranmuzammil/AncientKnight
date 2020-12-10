@@ -13,6 +13,11 @@ public class LevelLoad : MonoBehaviour
         StartCoroutine(LoadNextLevel(levelIndex));
     }
 
+    //public void VibrateButton()
+    //{
+    //    Vibration.Vibrate(50);
+    //}
+
     IEnumerator LoadNextLevel(int LevelIndex)
     {
         CrosFadeAnim.SetTrigger("Start");

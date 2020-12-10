@@ -20,12 +20,15 @@ public class GameContoller : MonoBehaviour
     {
         //SceneManager.LoadScene(1);
         SoundManagerScript.PlaySound("buttonSound");
+        //  Handheld.Vibrate();
+        Vibration.Vibrate(100);
         levelLoad.LeadScence(1);
     }
 
     public void OnClickOptions()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         OpsMenu.SetActive(true);
         MainMenu.SetActive(false);
     }
@@ -33,6 +36,7 @@ public class GameContoller : MonoBehaviour
     public void Quit()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         Application.Quit();
     }
 
@@ -40,6 +44,7 @@ public class GameContoller : MonoBehaviour
     public void OnClickBack()
     {
         SoundManagerScript.PlaySound("buttonSound");
+        Vibration.Vibrate(100);
         OpsMenu.SetActive(false);
         MainMenu.SetActive(true);
     }

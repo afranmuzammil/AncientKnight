@@ -25,18 +25,18 @@ public class ScoreLogic : MonoBehaviour
        
     public  void KilledEnemy()
     {
-        points =+ 10;
+        points += 10;
     }
 
     public void CoinTaken()
     {
-        points =+ 5;
-        coins =+ 1;
+        points += 5;
+        coins ++;
     }
 
     public void HealthTaken()
     {
-        points =- 2;
+        points -= 2;
     }
     // Update is called once per frame
     void Update()
@@ -49,7 +49,9 @@ public class ScoreLogic : MonoBehaviour
         int divideScore = CoinsGiven + HealthBoostGiven + NumEnemyGiven;
 
         finalScore = addUpScore / divideScore;
-        if (minCoinsToCollect == coins)
+
+
+        if (coins >= minCoinsToCollect)
         {
             exitlayer.DisableTrigger();
         }

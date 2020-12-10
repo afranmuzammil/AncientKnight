@@ -616,6 +616,11 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.4627451
       objectReference: {fileID: 0}
+    - target: {fileID: 2537447336922378299, guid: 8d860aa2a1facdb4bad87f67325d05e1,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3617475044457432590, guid: 8d860aa2a1facdb4bad87f67325d05e1,
         type: 3}
       propertyPath: m_Color.r
@@ -1107,7 +1112,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -19
   m_TargetDisplay: 0
 --- !u!114 &1738025617
 MonoBehaviour:

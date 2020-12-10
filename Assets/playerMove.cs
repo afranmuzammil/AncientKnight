@@ -85,7 +85,7 @@ public class playerMove : MonoBehaviour
         {
             SoundManagerScript.PlaySound("stinger_win");
             NextLevel.SetActive(true);
-            Time.timeScale = 0f;
+           // Time.timeScale = 0f;
         }
     }
 }

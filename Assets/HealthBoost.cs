@@ -18,7 +18,8 @@ public class HealthBoost : MonoBehaviour
             // Debug.Log("collition");
             SoundManagerScript.PlaySound("healthLoad");
             Destroy(gameObject);
-            KnightHealth.Health += 20;
+            KnightHealth.Health += 200;
+            Vibration.Vibrate(10);
             scoreLogic.HealthTaken();
             return;
         }
